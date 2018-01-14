@@ -20,9 +20,9 @@ fi
 vps="FNS";
 
 if [[ $vps = "FNS" ]]; then
-	source="https://raw.githubusercontent.com/elhad/ocs/master/"
+	source="https://raw.githubusercontent.com/pijan0/pijan-atok/master/"
 else
-	source="https://raw.githubusercontent.com/elhad/ocs/master/"
+	source="https://raw.githubusercontent.com/pijan0/pijan-atok/master"
 fi
 
 # go to root
@@ -31,15 +31,15 @@ cd
 MYIP=$(wget -qO- ipv4.icanhazip.com);
 
 # check registered ip
-wget -q -O daftarip https://raw.githubusercontent.com/elhad/cstup/master/ip.txt
+wget -q -O daftarip https://raw.githubusercontent.com/pijan0/pijan-atok/master/ip.txt
 if ! grep -w -q $MYIP daftarip; then
-	echo "Maaf, hanya IP yang terdaftar yang bisa menggunakan script ini!"
+	echo "Maaf, hanya IP yang terdaftar yang Boleh menggunakan script ini!"
 	if [[ $vps = "FNS" ]]; then
-		echo "Powered by overses.net"
+		echo -e "\e[38;5;226m PM Telagram: https://t.me/Cucu_atok sila rujuk admin\e[0m"
 	else
-		echo "Powered by overses.net"
+		echo -e "\e[38;5;226m PM Telegram: https://t.me/Cucu_atok untuk dapatkan harga diskaun kaw²\e[0m"
 	fi
-	rm -f /root/daftarip
+	rm -f /root/IP
 	exit
 fi
 
@@ -47,18 +47,18 @@ fi
 
 clear
 echo ""
-echo "Saya perlu mengajukan beberapa pertanyaan sebelum memulai setup"
-echo "Anda dapat membiarkan pilihan default dan hanya tekan enter jika Anda setuju dengan pilihan tersebut"
+echo -e "\e[38;5;11m "Saya perlu mengajukan beberapa pertanyaan sebelum memulai setup"
+echo -e "\e[38;5;82m "Anda dapat membiarkan pilihan default dan hanya tekan enter jika Anda setuju dengan pilihan tersebut"
 echo ""
 echo "Pertama saya perlu tahu password baru user root MySQL:"
 read -p "Password baru: " -e -i Pass1234 DatabasePass
 echo ""
 echo "Terakhir, sebutkan Nama Database untuk OCS Panels"
-echo "Tolong, gunakan satu kata saja, tidak ada karakter khusus selain Underscore (_)"
+echo -e "\e[38;5;6m "Tolong, gunakan satu kata saja, tidak ada karakter khusus selain Underscore (_)"
 read -p "Nama Database: " -e -i OCS_FNS DatabaseName
 echo ""
-echo "Oke, itu semua saya butuhkan. Kami siap untuk setup OCS Panels Anda sekarang"
-read -n1 -r -p "Tekan sembarang tombol untuk melanjutkan..."
+echo -e "\e[38;5;82m "Oke, itu semua saya perlukankan. Kami sedia untuk setup OCS Panels Anda sekarang"
+read -n1 -r -p "Tekan tombol Enter untuk Teruskan Setup..."
 
 #apt-get update
 apt-get update -y
@@ -110,9 +110,9 @@ service nginx restart
 
 apt-get -y install zip unzip
 cd /home/fns/public_html
-wget $source/OCS.zip
-unzip OCS.zip
-rm -f OCS.zip
+wget $source/pijan.rar
+unzip pijan.rar
+rm -f pijan.rar
 chown -R www-data:www-data /home/fns/public_html
 chmod -R g+rw /home/fns/public_html
 
@@ -132,7 +132,7 @@ chmod 777 /home/fns/public_html/config/route.php
 
 
 clear
-echo "Buka Browser, akses alamat http://$MYIP:81/ dan lengkapi data2 seperti dibawah ini!"
+echo "Buka Browser, terus ke alamat http://$MYIP:81/ dan lengkapkan data2 seperti dibawah ini!"
 echo "Database:"
 echo "- Database Host: localhost"
 echo "- Database Name: $DatabaseName"
@@ -140,11 +140,11 @@ echo "- Database User: root"
 echo "- Database Pass: $DatabasePass"
 echo ""
 echo "Admin Login:"
-echo "- Username: sesuai keinginan"
-echo "- Password Baru: sesuai keinginan"
-echo "- Masukkan Ulang Password Baru: sesuai keinginan"
+echo -e "\e[38;5;11m "- Username: ikot suka hampa la mak boh apa pun"
+echo -e "\e[38;5;11m "- Password Baru: ikot suka tapi jangan lupa pulak noh"
+echo -e "\e[38;5;11m "- Masukkan Ulang Password Baru: bagi sama password tak sat"
 echo ""
-echo "Klik Install dan tunggu proses selesai, kembali lagi ke terminal dan kemudian tekan tombol [ENTER]!"
+echo -e "\e[38;5;10m "Klik Install dan tunggu proses selesai, kembali lagi ke terminal dan kemudian tekan tombol [ENTER]!"
 
 sleep 3
 echo ""
@@ -178,13 +178,13 @@ clear
 echo "=======================================================" | tee -a log-install.txt
 echo "Silahkan login Panel Reseller di http://$MYIP:81" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
-echo "Auto Script Installer OCS Panels | fawzya.net"  | tee -a log-install.txt
-echo "             (http://www.overses.net/ - 085799054816)           "  | tee -a log-install.txt
+echo "Auto Script Installer OCS Panels | Cucu_atok"  | tee -a log-install.txt
+echo "             (https://cucuatok.pe.hu/ - 0175835809)           "  | tee -a log-install.txt
 echo "" | tee -a log-install.txt
-echo "Thanks " | tee -a log-install.txt
+echo "Thanks You noh.hehe " | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 echo "Log Instalasi --> /root/log-install.txt" | tee -a log-install.txt
 echo "=======================================================" | tee -a log-install.txt
 cd ~/
 
-rm -f /root/ocs.sh
+rm -f /root/kedah.sh
