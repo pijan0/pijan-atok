@@ -28,12 +28,24 @@ fi
 # go to root
 cd
 
+echo ""
+echo -e "\e[38;5;6m     ========================================================="
+echo -e "\e[38;5;82m     *              AUTOSCRIPT OCS PANEL 2018                *"
+echo -e "\e[38;5;6m     ========================================================="
+echo -e "\e[38;5;6m     *                     Contact Me                        *"
+echo -e "\e[38;5;6m     *                Channel: CuCuAtoK_TeaM                 *"
+echo -e "\e[38;5;6m     *                Whatsapp: -                            *"
+echo -e "\e[38;5;196m     *              Telegram: @Cucu_atok                     *"
+echo -e "\e[38;5;6m     ========================================================="
+echo -e "\e[38;5;226m     *                AUTOSCRIPT VPS 2018                    *"
+echo -e "\e[38;5;6m     ========================================================="
+
 MYIP=$(wget -qO- ipv4.icanhazip.com);
 
 # check registered ip
 wget -q -O daftarip https://raw.githubusercontent.com/pijan0/pijan-atok/master/ip.txt
 if ! grep -w -q $MYIP daftarip; then
-	echo "Maaf, hanya IP yang terdaftar yang Boleh menggunakan script ini!"
+	echo -e "\e[38;5;196m "Maaf, hanya IP yang terdaftar yang Boleh menggunakan script ini!"
 	if [[ $vps = "FNS" ]]; then
 		echo -e "\e[38;5;226m PM Telagram: https://t.me/Cucu_atok sila rujuk admin\e[0m"
 	else
