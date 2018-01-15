@@ -190,7 +190,6 @@ echo "=======================================================" | tee -a log-inst
 echo "Silahkan login Panel Reseller di http://$MYIP:81" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 echo "Auto Script Installer OCS Panels | Cucu_atok"  | tee -a log-install.txt
-echo "(https://cucuatok.pe.hu/ - 0175835809)           "  | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 echo "Thanks You noh.hehe " | tee -a log-install.txt
 echo "" | tee -a log-install.txt
