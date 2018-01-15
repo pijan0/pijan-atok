@@ -112,15 +112,14 @@ curl $source/ocs/vps.conf > /etc/nginx/conf.d/vps.conf
 sed -i 's/cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php5/fpm/php.ini
 sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php5/fpm/pool.d/www.conf
 
-useradd -m fns
-mkdir -p /home/fns/public_html
-echo "<?php phpinfo() ?>" > /home/public_html/info.php
+useradd -m 
+mkdir -p /home//public_html
 chown -R www-data:www-data /home/public_html
 chmod -R g+rw /home/fns/public_html
 service php5-fpm restart
 service nginx restart
 
-apt-get -y install zip unzip
+apt-get -y install rar unzip
 cd /home/fns/public_html
 wget $source/pijan.rar
 unzip pijan.rar
