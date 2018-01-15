@@ -20,9 +20,9 @@ fi
 vps="FNS";
 
 if [[ $vps = "FNS" ]]; then
-	source="https://raw.githubusercontent.com/pijan9/pijan-atok/master/"
+	source="https://raw.githubusercontent.com/pijan0/pijan-atok/master/"
 else
-	source="https://raw.githubusercontent.com/pijan9/pijan-atok/master/"
+	source="https://raw.githubusercontent.com/pijan0/pijan-atok/master/"
 fi
 
 # go to root
