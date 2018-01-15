@@ -114,8 +114,8 @@ sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php
 
 useradd -m fns
 mkdir -p /home/fns/public_html
-echo "<?php phpinfo() ?>" > /home/fns/public_html/info.php
-chown -R www-data:www-data /home/fns/public_html
+echo "<?php phpinfo() ?>" > /home/public_html/info.php
+chown -R www-data:www-data /home/public_html
 chmod -R g+rw /home/fns/public_html
 service php5-fpm restart
 service nginx restart
